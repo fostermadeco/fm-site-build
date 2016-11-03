@@ -5,11 +5,11 @@ A small library that adds commas to numbers
 
 ## Installation
 
-  `npm install @kellypacker/fm-site-build`
+  `npm install fm-site-build`
 
 ## Usage
 
-    var numFormatter = require('@kellypacker/fm-site-build');
+    var numFormatter = require('fm-site-build');
 
     var formattedNum = numFormatter(35666);
   
