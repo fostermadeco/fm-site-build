@@ -1,6 +1,14 @@
 'use strict';
 var gulp       = require('gulp');
 var log        = require('gulp-util').log;
+var cond       = require('gulp-if');
+var sass       = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
+var cleanCss = require('gulp-clean-css');
+var rename = require('gulp-rename');
+
+
 // var del        = require('del');
 // var vinylPaths = require('vinyl-paths');
 
@@ -41,14 +49,14 @@ module.exports = function(isProd, config) {
         return gulp.src(src)
             // .pipe(gulpChanged(config.compiledDir))
             // .pipe($.plumber(taskSetup.plumberErrorHandler))
-            .pipe($.if(!isProd(), $.sourcemaps.init()))
-            .pipe($.sass({
+            .pipe(cond(!isProd(), sourcemaps.init()))
+            .pipe(sass({
                 includePaths: sassPaths
             }))
-            .pipe($.autoprefixer({browsers: ['last 2 versions', 'Explorer >= 8']}))
-            .pipe($.if(!isProd(), $.sourcemaps.write()))
-            .pipe($.if(isProd(), $.cleanCss()))
-            .pipe($.rename(destFile))
+            .pipe(autoprefixer({browsers: ['last 2 versions', 'Explorer >= 8']}))
+            .pipe(cond(!isProd(), sourcemaps.write()))
+            .pipe(cond(isProd(), cleanCss()))
+            .pipe(rename(destFile))
             .pipe(gulp.dest(dest));
     }
 };
