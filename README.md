@@ -1,7 +1,5 @@
 # FM Site Build Tools
 
-=========
-
 Library of gulp tasks to perform site build actions, including: 
 
 * Compile Sass
