@@ -1,5 +1,5 @@
 var utils           = require('../fm-build-utils')();
-var env             = require('../gulp.env')();
+var env             = require('../env')();
 
 var gulp       = require('gulp');
 var modernizr  = require('gulp-modernizr');

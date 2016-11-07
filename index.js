@@ -1,4 +1,4 @@
-var env          = require('./gulp.env')();
+var env          = require('./env')();
 
 var gulp         = require('gulp');
 var log          = require('gulp-util').log;
