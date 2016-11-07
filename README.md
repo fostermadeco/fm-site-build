@@ -86,6 +86,8 @@ Creates files in dist folder. In index.html, add references for main-min.js, mai
 
 ## Contributing changes and bumping version
 
+Bump version in package.json
+
 ```
 git add .
 git commit -m "desc of changes"
