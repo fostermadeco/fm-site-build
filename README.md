@@ -1,7 +1,5 @@
 # FM Site Build Tools
 
-
-[https://www.npmjs.com/package/fm-site-build](https://www.npmjs.com/package/fm-site-build)
 =========
 
 Library of gulp tasks to perform site build actions, including: 
@@ -14,6 +12,8 @@ Library of gulp tasks to perform site build actions, including:
 ## Installation
 
   `npm install fm-site-build --save-dev`
+
+[https://www.npmjs.com/package/fm-site-build](https://www.npmjs.com/package/fm-site-build)
 
 ## Usage
 
