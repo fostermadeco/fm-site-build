@@ -1,0 +1,6 @@
+# editorconfig.org
+root = true
+
+[*.{js,html}]
+indent_style = spaces
+indent_size = 4
