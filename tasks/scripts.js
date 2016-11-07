@@ -1,4 +1,5 @@
 var utils           = require('../fm-build-utils')();
+var env             = require('../gulp.env')();
 
 var gulp            = require('gulp');
 var filter          = require('gulp-filter');
@@ -11,15 +12,16 @@ var sourcemaps      = require('gulp-sourcemaps');
 var rename          = require('gulp-rename');
 var log             = require('gulp-util').log;
 
-module.exports = function(isProd, config) {
-    isProd = isProd;
+module.exports = function(config) {
+    var isProd;
     config = config;
 
     return {
-        getScriptsTask: getScriptsTask
+        getScriptsStream: getScriptsStream
     };
 
-    function getScriptsTask() {
+    function getScriptsStream() {
+        isProd = env.isProd();
         console.log(isProd);
         
         var src = config.allJsFiles;
@@ -28,7 +30,7 @@ module.exports = function(isProd, config) {
         var destFile = isProd ? config.dist.js.file : config.dev.js.file;
 
         // error handling for missing files
-        return _getScriptsTaskBody(src, concatFile, dest, destFile);
+        return _getScriptsStreamBody(src, concatFile, dest, destFile);
     }
 
     /**
@@ -36,7 +38,7 @@ module.exports = function(isProd, config) {
      * Creates file in dev or dist depending on env
      * @return {Stream}
      */
-    function _getScriptsTaskBody(src, concatFile, dest, destFile) {
+    function _getScriptsStreamBody(src, concatFile, dest, destFile) {
         var filterVendor = filter(['./vendor'], {restore: true});
 
         utils.logStart("Starting scripts task:");

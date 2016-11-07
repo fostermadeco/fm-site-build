@@ -1,4 +1,5 @@
 var utils           = require('../fm-build-utils')();
+var env             = require('../gulp.env')();
 
 var gulp       = require('gulp');
 var modernizr  = require('gulp-modernizr');
@@ -6,28 +7,29 @@ var uglify     = require('gulp-uglify');
 var rename     = require('gulp-rename');
 var cond       = require('gulp-if');
 
-module.exports = function(isProd, config) {
-    isProd = isProd;
+module.exports = function(config) {
+    var isProd;
     config = config;
 
     return {
-        getModTask: getModTask
+        getModStream: getModStream
     };
 
-    function getModTask(options) {
+    function getModStream(options) {
+        isProd = env.isProd();
         var src = config.src.js.files;
         var dest = isProd ? config.dist.dir : config.dev.dir;
         var destFile = isProd ? config.dist.js.modFile : config.dev.js.modFile;
         
         // error handling for missing files
 
-        return _getModTaskBody(src, dest, destFile, config.modernizrOptions);
+        return _getModStreamBody(src, dest, destFile, config.modernizrOptions);
     }
 
     /**
      * Builds modernizr file, list of tests to add: https://modernizr.com/download
      */
-    function _getModTaskBody(src, dest, destFile, options) {
+    function _getModStreamBody(src, dest, destFile, options) {
 
         utils.logStart("Creating modernizr file");
         utils.logDest(dest + destFile);

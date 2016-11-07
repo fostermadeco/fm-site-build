@@ -1,4 +1,5 @@
 var utils           = require('../fm-build-utils')();
+
 var gulp         = require('gulp');
 var revDelete    = require('gulp-rev-delete-original');
 var revDel       = require('rev-del');
@@ -8,16 +9,15 @@ var rev          = require('gulp-rev');
 var plumber      = require('gulp-plumber');
 var revCollector = require('gulp-rev-collector');
 
-module.exports = function(isProd, config) {
-    isProd = isProd;
+module.exports = function(config) {
     config = config;
 
     return {
-        getRevisionTask: getRevisionTask,
-        createTasksForRevReplace: createTasksForRevReplace
+        getRevisionStream: getRevisionStream,
+        createStreamsForRevReplace: createStreamsForRevReplace
     };
 
-    function getRevisionTask(options) {
+    function getRevisionStream(options) {
         var dest = config.dist.dir;
 
         var src = [
@@ -28,14 +28,14 @@ module.exports = function(isProd, config) {
         
         // error handling for missing files
 
-        return _getRevisionTaskBody(src, dest);
+        return _getRevisionStreamBody(src, dest);
     }
 
     /**
      * Creates a new dist version of the ts css and js.
      * @return {Stream}
      */
-    function _getRevisionTaskBody(src, dest) {
+    function _getRevisionStreamBody(src, dest) {
         utils.logStart('Creating version of js and css.');
 
         utils.logSrc(src);
@@ -59,10 +59,10 @@ module.exports = function(isProd, config) {
         // _html/footer.html -> _html/
         return file.replace(/\/([^/]*)$/, '') + '/'; 
     }
-
-    function createTasksForRevReplace () {
+    
+    function createStreamsForRevReplace () {
         config.templates.indexes.forEach(function(file, i) {
-            gulp.task('revreplace-' + i, function() {
+            gulp.task('_revreplace-' + i, function() {
                 var manifest = config.dist.dir + 'rev-manifest.json';
                 var dest = _getDestination(file);
                 // gulp-rev-collector replaces versioned revision file reference as opposed to

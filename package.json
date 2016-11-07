@@ -1,20 +1,67 @@
 {
-  "name": "fm-site-build",
-  "version": "0.0.6",
-  "description": "Foster Made Site Build Package",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha --reporter spec"
+  "_args": [
+    [
+      {
+        "raw": "fm-site-build@0.0.4",
+        "scope": null,
+        "escapedName": "fm-site-build",
+        "name": "fm-site-build",
+        "rawSpec": "0.0.4",
+        "spec": "0.0.4",
+        "type": "version"
+      },
+      "/Users/kelly/Sites/fostermade/test-site"
+    ]
+  ],
+  "_from": "fm-site-build@0.0.4",
+  "_id": "fm-site-build@0.0.4",
+  "_inCache": true,
+  "_location": "/fm-site-build",
+  "_nodeVersion": "7.0.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/fm-site-build-0.0.4.tgz_1478213638210_0.36326035065576434"
   },
-  "author": "Foster Made",
-  "license": "MIT",
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.1.2"
+  "_npmUser": {
+    "name": "kellypackerfm",
+    "email": "kelly.packer@fostermade.co"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kellypacker/fm-site-build.git"
+  "_npmVersion": "3.10.9",
+  "_phantomChildren": {
+    "acorn": "4.0.3",
+    "clone": "1.0.2",
+    "clone-stats": "0.0.1",
+    "convert-source-map": "1.3.0",
+    "css": "2.2.1",
+    "debug-fabulous": "0.0.4",
+    "detect-newline": "2.1.0",
+    "graceful-fs": "4.1.10",
+    "replace-ext": "0.0.1",
+    "source-map": "0.5.6",
+    "through2": "2.0.1"
+  },
+  "_requested": {
+    "raw": "fm-site-build@0.0.4",
+    "scope": null,
+    "escapedName": "fm-site-build",
+    "name": "fm-site-build",
+    "rawSpec": "0.0.4",
+    "spec": "0.0.4",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/fm-site-build/-/fm-site-build-0.0.4.tgz",
+  "_shasum": "451677ba0e4f463c669469eef3b5684092833e45",
+  "_shrinkwrap": null,
+  "_spec": "fm-site-build@0.0.4",
+  "_where": "/Users/kelly/Sites/fostermade/test-site",
+  "author": {
+    "name": "Foster Made"
+  },
+  "bugs": {
+    "url": "https://github.com/kellypacker/fm-site-build/issues"
   },
   "dependencies": {
     "gulp": "^3.9.1",
@@ -24,20 +71,37 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.2.0",
-    "gulp-util": "^3.0.7",
-    "babel-preset-es2015": "^6.18.0",
-    "del": "^2.2.2",
-    "gulp-babel": "^6.1.2",
-    "gulp-changed": "^1.3.2",
-    "gulp-concat": "^2.6.0",
-    "gulp-filter": "^4.0.0",
-    "gulp-modernizr": "^1.0.0-alpha",
-    "gulp-notify": "^2.2.0",
-    "gulp-replace": "^0.5.4",
-    "gulp-rev": "^7.1.2",
-    "gulp-rev-collector": "^1.0.5",
-    "gulp-task-listing": "^1.0.1",
-    "rework-plugin-url": "^1.1.0",
-    "vinyl-paths": "^2.1.0"
-  }
+    "gulp-util": "^3.0.7"
+  },
+  "description": "Foster Made Site Build Package",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "451677ba0e4f463c669469eef3b5684092833e45",
+    "tarball": "https://registry.npmjs.org/fm-site-build/-/fm-site-build-0.0.4.tgz"
+  },
+  "gitHead": "0fbeb47256e4d275314241d84a74770f9356f567",
+  "homepage": "https://github.com/kellypacker/fm-site-build#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "kellypackerfm",
+      "email": "kelly.packer@fostermade.co"
+    }
+  ],
+  "name": "fm-site-build",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kellypacker/fm-site-build.git"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "version": "0.0.4"
 }

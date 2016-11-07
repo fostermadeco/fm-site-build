@@ -1,31 +1,30 @@
-var utils           = require('../fm-build-utils')();
+var utils       = require('../fm-build-utils')();
 
-var gulp       = require('gulp');
-var _          = require('lodash');
-var argv       = require('yargs').argv;
+var gulp        = require('gulp');
+var _           = require('lodash');
+var argv        = require('yargs').argv;
 var browserSync = require('browser-sync');
 
-module.exports = function(isProd, config) {
-    isProd = isProd;
+module.exports = function(config) {
     config = config;
 
     return {
-        getWatchTask: getWatchTask
+        getWatchStream: getWatchStream
     };
 
-    function getWatchTask() {
+    function getWatchStream() {
         var files = config.templates.indexes;
         files.push(config.dev.dir + '*.*');
         
         // error handling for missing files
 
-        return _getWatchTaskBody(files);
+        return _getWatchStreamBody(files);
     }
 
     /**
      * Start browser-sync and watch css and js
      */
-    function _getWatchTaskBody(files) {    
+    function _getWatchStreamBody(files) {    
         utils.logStart("Starting watch");
         
         var proxy = argv.proxy || config.localUrl;
