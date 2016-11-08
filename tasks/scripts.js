@@ -22,7 +22,6 @@ module.exports = function(config) {
 
     function getScriptsStream() {
         isProd = env.isProd();
-        console.log(isProd);
         
         var src = config.allJsFiles;
         var dest = isProd ? config.dist.dir : config.dev.dir;

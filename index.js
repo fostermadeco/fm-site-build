@@ -123,7 +123,12 @@ module.exports = function(options) {
      * Allows tasks to be set through package
      */
     function getWatchSequence() {
-        return runSequence('dev', '_startWatch');
+        return runSequence(['_bower:images', '_bower:fonts', '_bower:css'],
+            '_styles', 
+            '_scripts', 
+            '_mod', 
+            '_startWatch'
+        );
     }
 
     /*

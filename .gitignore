@@ -1,2 +1,4 @@
 .DS_Store
 node_modules
+fm-site-build.sublime-project
+fm-site-build.sublime-workspace
