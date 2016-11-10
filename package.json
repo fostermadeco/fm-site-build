@@ -1,6 +1,6 @@
 {
   "name": "fm-site-build",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Foster Made Site Build Package",
   "main": "index.js",
   "scripts": {
