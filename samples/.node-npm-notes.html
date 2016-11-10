@@ -1,0 +1,15 @@
+- Starting fresh:
+
+1. npm install
+2. bower install
+3. Update dev URL in gulp/gulp.options.js:
+
+options.localUrl = 'XXXXXX.dev';
+
+
+- To install new packages:
+
+1. bower install --save whatevername
+2. add necessary bowerFiles to gulp.options.js
+3. run: gulp dev
+4. re-start: gulp watch

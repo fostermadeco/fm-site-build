@@ -10,12 +10,12 @@
         <link rel="shortcut icon" href="/favicon.ico">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <style>body{visibility:hidden;}</style>
-        <!-- dev specific -->
+        <!-- local dev -->
         <link rel="stylesheet" href="/assets/dev/vendor.css">
         <link rel="stylesheet" href="/assets/dev/app.css">
-        <!-- dist specific -->
-        <noscript><link rel="stylesheet" href="/assets/dev/main-min-d4b027baf4.css"></noscript>
-        <!--[if lte IE 9]><link rel="stylesheet" href="/assets/dev/main-min-d4b027baf4.css"><![endif]-->
+        <!-- production files -->
+        <noscript id="deferred-styles"><link rel="stylesheet" href="/assets/dist/main-min-ff7207ae17.css"></noscript>
+        <!--[if lte IE 9]><link rel="stylesheet" href="/assets/dist/main-min-ff7207ae17.css"><![endif]-->
     </head>
 
     <body>
@@ -32,7 +32,7 @@
                 </nav>
             </div><!-- /.wrapper -->
         </header>
-
+        
         <div class="content">
             <div class="wrapper cleared">
             
@@ -41,23 +41,23 @@
             
             </div><!-- /.wrapper -->
         </div><!-- /.content -->
-
+            
         <footer>
             <div class="wrapper cleared">
             </div><!-- /.wrapper -->
-        </footer>
+        </footer>        
         
-        <!-- dev specific -->
+        <!-- local dev -->
         <script src="/assets/dev/modernizr.js"></script>
         <script src="/assets/dev/main.js"></script>
-        <!-- dist specific -->
+        <!-- production files -->
         <!--
             <script src="/assets/dist/modernizr-min-882ac86081.js"></script>
-            <script src="/assets/dist/main-min-b566517737.js"></script>
+            <script src="/assets/dist/main-min-28ca8f951d.js"></script>
             <script>
                 var cb = function() {
-                    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/assets/dist/main-min-d4b027baf4.css';
-                    var h = document.getElementsByTagName('script')[0]; h.parentNode.insertBefore(l, h);
+                    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/assets/dist/main-min-57ae02350a.css';
+                    var h = document.getElementById('deferred-styles'); h.parentNode.insertBefore(l, h);
                 };
                 var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
                 if (raf) raf(cb);

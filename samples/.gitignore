@@ -1,0 +1,7 @@
+# PROCESS
+/node_modules
+npm-debug.log
+markup/
+node_tmp/
+fm-build.sublime-project
+fm-build.sublime-workspace
