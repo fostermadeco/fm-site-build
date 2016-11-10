@@ -4,7 +4,7 @@
   "description": "Example site for fm-site-build implementation.",
   "main": "gulpfile.js",
   "devDependencies": {
-    "fm-site-build": "~0.0.13",
+    "fm-site-build": "~0.0.x",
     "gulp": "^3.9.1"
   },
   "author": "Foster Made",

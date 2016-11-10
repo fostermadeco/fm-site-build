@@ -48,5 +48,15 @@ module.exports = function() {
         ]
     };
 
+    // Configurables for modernizr, see more https://modernizr.com/download
+    options.modernizr = {
+        options: [
+            'setClasses',
+            'html5shiv',
+            'html5printshiv'
+        ],
+        tests: ['touchevents']
+    };
+
     return options;
 };
