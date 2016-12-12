@@ -25,7 +25,8 @@ module.exports = function(config) {
     function getBowerCssStream() {
         isProd = env.isProd();
 
-        var src = config.bower.files.css;
+        // note this includes other css in vendor folder (not bower) rethink this
+        var src = config.allVendorCss;
         var dest = isProd ? config.dist.dir : config.dev.dir;
         var destFile = isProd ? config.dist.vendor.css.file : config.dev.vendor.css.file;
         

@@ -120,7 +120,8 @@ module.exports = function(options) {
 
     // bower, other vendor and app
     config.allJsFiles = config.vendor.js.files.concat(config.src.js.files);
-    config.allCssFiles = config.vendor.css.files.concat(config.src.sass.files);
+    config.allVendorCss = config.bower.files.css.concat(config.vendor.css.files);
+    config.allCssFiles = config.src.sass.files;
 
     return config;
 };
