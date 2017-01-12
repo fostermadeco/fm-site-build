@@ -123,5 +123,7 @@ module.exports = function(options) {
     config.allVendorCss = config.bower.files.css.concat(config.vendor.css.files);
     config.allCssFiles = config.src.sass.files;
 
+    config.webpack = options.webpack || false;
+
     return config;
 };

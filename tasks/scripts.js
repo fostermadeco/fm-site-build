@@ -11,6 +11,7 @@ var uglify          = require('gulp-uglify');
 var sourcemaps      = require('gulp-sourcemaps');
 var rename          = require('gulp-rename');
 var log             = require('gulp-util').log;
+var webpack = require('webpack-stream');
 
 module.exports = function(config) {
     var isProd;
@@ -43,6 +44,13 @@ module.exports = function(config) {
         utils.logStart("Starting scripts task:");
         utils.logSrc(src);
         utils.logDest(dest + destFile);
+
+        if (config.webpack) {
+            console.log(dest);
+            return gulp.src(src)
+                .pipe(webpack( require('../webpack.config.js')(config, isProd) ))
+                .pipe(gulp.dest(dest));
+        }
 
         return gulp.src(src)
             .pipe(plumber(utils.plumberErrorHandler))
