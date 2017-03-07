@@ -12,7 +12,8 @@ var cleanCss        = require('gulp-clean-css');
 var rename          = require('gulp-rename');
 var del             = require('del');
 var vinylPaths      = require('vinyl-paths');
-var concat = require('gulp-concat');
+var concat          = require('gulp-concat');
+var insert          = require('gulp-insert');
 
 /**
  */
@@ -44,6 +45,15 @@ module.exports = function(config) {
     }
 
     /*
+     * Gets files for css import since they need to be first in css
+     */
+    function _getImportsFromConfig() {
+        return config.cssUrlImports.map(function(url) {
+            return '@import url(' + url + ');\n';
+        }).join('');
+    }
+
+    /*
      * Processes Sass files and creates new combined file.
      */
     function _getStylesStreamBody(src, dest, destFile) {
@@ -53,10 +63,10 @@ module.exports = function(config) {
         utils.logDest(dest + destFile);
 
         var sassPaths = config.src.sass.partials;
-
         return gulp.src(src)
             .pipe(cond(!isProd, gulpChanged(dest)))
             .pipe(plumber(utils.plumberErrorHandler))
+            .pipe(cond(!isProd, insert.prepend(_getImportsFromConfig())))
             .pipe(cond(!isProd, sourcemaps.init()))
             .pipe(sass({
                 includePaths: sassPaths
@@ -120,6 +130,7 @@ module.exports = function(config) {
         return gulp.src(src)
             .pipe(plumber(utils.plumberErrorHandler))
             .pipe(concat(destFile))
+            .pipe(insert.prepend(_getImportsFromConfig()))
             .pipe(vinylPaths(del))
             .pipe(gulp.dest(dest));
     }

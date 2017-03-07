@@ -48,6 +48,10 @@ module.exports = function() {
         ]
     };
 
+    options.cssUrlImports = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:300,400|Shadows+Into+Light'
+    ];
+
     // Configurables for modernizr, see more https://modernizr.com/download
     options.modernizr = {
         options: [

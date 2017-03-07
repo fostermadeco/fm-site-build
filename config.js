@@ -115,7 +115,8 @@ module.exports = function(options) {
             }
         },
         localUrl: options.localUrl,
-        modernizrOptions: options.modernizr
+        modernizrOptions: options.modernizr,
+        cssUrlImports: options.cssUrlImports || [],
     };
 
     // bower, other vendor and app
