@@ -15,6 +15,8 @@ Library of gulp tasks to perform site build actions, including:
 
 ## Usage
 
+Sample site setup: [https://github.com/fostermadeco/fm-site-build-example-site](https://github.com/fostermadeco/fm-site-build-example-site)
+
 * Copy files in sample folder to main roote of site.
 * Edit fm-site-build.options.js to fit site specific needs.
 * Run 'bower install' and 'npm install'
