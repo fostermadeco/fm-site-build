@@ -50,6 +50,7 @@ module.exports = function(config) {
             .pipe(cond(!isProd, sourcemaps.init()))
             .pipe(concat(destFile))
             .pipe(replace('url(\'../fonts', 'url(\'./fonts'))
+            .pipe(replace('url(\"../fonts', 'url(\"./fonts'))
             .pipe(cond(!isProd, sourcemaps.write()))
             .pipe(cond(isProd, cleanCss()))
             .pipe(gulp.dest(dest))
