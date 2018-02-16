@@ -15,7 +15,7 @@ module.exports = function(config) {
     function getWatchStream() {
         var files = config.templates.indexes;
         files.push(config.dev.dir + '*.*');
-        
+
         // error handling for missing files
 
         return _getWatchStreamBody(files);
@@ -24,9 +24,9 @@ module.exports = function(config) {
     /**
      * Start browser-sync and watch css and js
      */
-    function _getWatchStreamBody(files) {    
+    function _getWatchStreamBody(files) {
         utils.logStart("Starting watch");
-        
+
         var proxy = argv.proxy || config.localUrl;
 
         var watchOptions = {
@@ -42,7 +42,8 @@ module.exports = function(config) {
             logFileChanges: true,
             logLevel: 'info',
             notify: true,
-            reloadDelay: 0 //1000
+            reloadDelay: 0, //1000,
+            https: true,
         };
 
         browserSync(watchOptions);
