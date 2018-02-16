@@ -39,7 +39,7 @@ module.exports = function(options) {
         dir: options.srcDir,
         sass: {
             dir: options.srcSass,
-            files: options.srcSass + '*.scss', 
+            files: options.srcSass + '*.scss',
             partials: getSassPartialDirs(options.srcSass),
         },
         js: {
@@ -97,7 +97,6 @@ module.exports = function(options) {
     var config = {
         bower: bower,
         templates: {
-            dir: options.templatesDir,
             indexes: options.indexFiles
         },
         src: src,
