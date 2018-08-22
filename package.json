@@ -1,6 +1,6 @@
 {
   "name": "fm-site-build",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "Foster Made Site Build Package",
   "main": "index.js",
   "scripts": {
@@ -37,7 +37,7 @@
     "gulp-rev": "^7.1.2",
     "gulp-rev-collector": "^1.0.5",
     "gulp-rev-delete-original": "^0.2.2",
-    "gulp-sass": "^2.3.2",
+    "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-task-listing": "^1.0.1",
     "gulp-uglify": "^2.0.0",
